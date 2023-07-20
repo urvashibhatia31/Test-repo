@@ -4,14 +4,9 @@ metadata:
   name: my-pod
 spec:
   containers:
-    - name: my-container
-      image: myacr.azurecr.io/my-image:latest
-      ports:
-        - containerPort: 80
-      env:
-        # Add any environment variables your application needs (optional)
-        - name: ENV_VAR_KEY
-          value: ENV_VAR_VALUE
-      # Add other container specifications like resources, volume mounts, etc. (optional)
+  - name: my-container
+    image: myacr.azurecr.io/my-image:latest
+    ports:
+    - containerPort: 80
   imagePullSecrets:
-    - name: acr-auth-secret
+  - name: acr-credentials
