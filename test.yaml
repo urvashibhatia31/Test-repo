@@ -1,12 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod
+  name: private-hello-world
 spec:
   containers:
-  - name: my-container
-    image: myacr.azurecr.io/my-image:latest
-    ports:
-    - containerPort: 80
+  - name: private-hello-container
+    image: crnode.azurecr.io/crnode
   imagePullSecrets:
-  - name: acr-credentials
+  - name: secret
