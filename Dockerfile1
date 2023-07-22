@@ -1,0 +1,19 @@
+# Use the official Docker-in-Docker (DinD) image as the base image
+FROM docker:latest
+
+# Install necessary dependencies for kubectl
+RUN apk update && apk add --no-cache curl ca-certificates
+
+# Install kubectl
+RUN curl -LO "https://dl.k8s.io/release/$(curl -Ls https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
+    chmod +x kubectl && \
+    mv kubectl /usr/local/bin/
+
+# Set the working directory to /app (optional but recommended)
+WORKDIR /app
+
+# Set the entrypoint to run Docker as a service
+ENTRYPOINT ["dockerd-entrypoint.sh"]
+
+# Set the default command to start Docker with the DinD configuration
+CMD ["--storage-driver=overlay2"]
