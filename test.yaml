@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
   - name: private-hello-container
-    image: crnode.azurecr.io/crnode
+    image: crnode.azurecr.io/crnode:v1
   imagePullSecrets:
   - name: secret
