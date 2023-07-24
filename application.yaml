@@ -17,6 +17,7 @@ metadata:
 spec:
   selector:
     app: private-hello-world
+    type: LoadBalancer
   ports:
   - protocol: TCP
     port: 80
