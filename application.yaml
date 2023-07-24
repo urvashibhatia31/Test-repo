@@ -19,8 +19,7 @@ spec:
     app: private-hello-world
   ports:
   - protocol: TCP
-    port: 8090
-    targetPort: 80
-  type: LoadBalancer
-  loadBalancerIP: 20.121.167.45
+    port: 3000
+    targetPort: 3000
+
 
