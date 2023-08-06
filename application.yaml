@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: custom-docker-image
-          image: your-custom-docker-image:tag
+          image: cronde:v1
           # Add any additional configurations or environment variables as needed
           # ports:
           #   - containerPort: 3000
