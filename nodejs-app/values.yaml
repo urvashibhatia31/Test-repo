@@ -1,0 +1,5 @@
+# values.yaml
+image:
+  repository: crnode.azurecr.io/crnode
+  tag: v1
+

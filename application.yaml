@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: private-hello-world
+spec:
+  containers:
+  - name: private-hello-container-test
+    image: crnode.azurecr.io/crnode:v1
+  imagePullSecrets:
+  - name: secret
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: private-hello-service-test
+spec:
+  selector:
+    app: private-hello-world
+  ports:
+  - protocol: TCP
+    port: 8090
+    targetPort: 80
+  type: LoadBalancer
+  loadBalancerIP: 20.121.167.45
+
