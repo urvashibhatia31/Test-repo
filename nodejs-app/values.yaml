@@ -2,4 +2,5 @@
 image:
   repository: crnode.azurecr.io/crnode
   tag: v1
+namespace: jenkins
 
